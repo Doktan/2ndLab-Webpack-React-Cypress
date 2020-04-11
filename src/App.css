@@ -1,0 +1,11 @@
+.Border{
+  border: 4px double black;
+}
+.Joke{
+  color: blue;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.intro {
+  background-color: grey;
+}

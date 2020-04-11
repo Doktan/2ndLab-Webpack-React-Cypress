@@ -1,0 +1,4 @@
+{
+    "integrationFolder": "./tests",
+    "baseUrl": "http://localhost:9000"
+}
