@@ -12,6 +12,9 @@ The page will reload if you make edits.<br />
 
 ### `npm test`
 
-Launches 3 tests via Cypress 
+Launches 5 tests via Cypress 
 
 
+### `npm build`
+
+Create a WebPack build of this site 
