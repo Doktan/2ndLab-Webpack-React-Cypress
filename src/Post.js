@@ -1,68 +1,56 @@
 import React from "react";
 
-function getRandomIntInclusive(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min; //Максимум и минимум включаются
-  }
-
-
-  class Post extends React.Component {
-    constructor(props){
+class Post extends React.PureComponent {
+  constructor(props) {
     super(props);
     this.state = {
-        num: props.num,
-        userId: null,
-        id: null,
-        title: null,
-        body: null   
-      };
-    }
-
-    fetchPost() {
-      fetch("https://jsonplaceholder.typicode.com/posts/" + this.props.num)
-        .then(response => response.json())
-        .then(result =>
-          this.setState({
-            userId: result.userId,
-            id: result.id,
-            title: result.title,
-            body: result.body
-          })
-        )
-    }
-
-    async componentDidMount() {
-      //let num = getRandomIntInclusive(1,100); // Это нужно, для выбора случайного поста в 
-      /*let url = "https://jsonplaceholder.typicode.com/posts/" + this.state.num;
-       await fetch(url)
-        .then(res => res.json())
-        .then(
-          result => {
-            this.setState({
-              userId: result.userId,
-              id: result.id,
-              title: result.title,
-              body: result.body
-            });
-          }
-        )*/
-        this.fetchPost()
-    }
-
-
-    render(){
-      return(
-      <div className="itro">
-      <p className="Joke"><b>Случайный Пост №{this.state.num}</b></p>
-      <ul>
-        <li>UserId: {this.state.userId}</li>
-        <li>Id: {this.state.id}</li>
-        <li>Title: {this.state.title}</li>
-        <li>Body: {this.state.body}</li>
-      </ul>
-      </div>
-      )
-    }
+      num: props.num,
+      userId: null,
+      id: null,
+      title: null,
+      body: null
+    };
   }
-  export default Post
+
+  fetchPost(props) {
+    fetch("https://jsonplaceholder.typicode.com/posts/" + props)
+      .then(response => response.json())
+      .then(result =>
+        this.setState({
+          num: props,
+          ...result
+        })
+      )
+  }
+
+  componentDidMount() {
+    console.log("this.state.num " + this.state.num)
+    this.fetchPost(this.state.num)
+    console.log("mount")
+  }
+
+  componentDidUpdate(prevProps) {
+      console.log("update")
+      console.log("props " + this.props.num + " preProps " + prevProps.num )
+      if (this.props.num != prevProps.num) {
+        console.log("create")
+        this.fetchPost(this.props.num)
+      }
+  }
+
+  render() {
+    return (
+      <div className="itro">
+        <p className="Joke"><b>Случайный Пост №{this.state.num}</b></p>
+        <ul>
+          <li>UserId: {this.state.userId}</li>
+          <li>Id: {this.state.id}</li>
+          <li>Title: {this.state.title}</li>
+          <li>Body: {this.state.body}</li>
+        </ul>
+      </div>
+    )
+  }
+}
+
+export default Post
