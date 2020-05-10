@@ -10,7 +10,6 @@ describe('Fetch test', () => {
   })
 })
 
-
 describe("Input test 1", () => {
   it("String input instead of number", () => {
     cy.visit("/");
