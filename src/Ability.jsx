@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
-import Post from './Post';
+import Post from './Post.jsx';
 
 class Ability extends React.Component {
   constructor(props) {
