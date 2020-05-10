@@ -46,4 +46,10 @@ describe("Input test 3", () => {
   })
 })
 
-
+describe("Input test 4", () => {
+  it("Correct number is input, and Post appears ", () => {
+    cy.visit("/");
+    cy.get('#inputArea').type("5{enter}")
+    cy.contains("Случайный Пост №5")
+  })
+})

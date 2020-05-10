@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import Post from './Post';
-import Ability from './Ability';
-import Comment from './Comment';
-import Album from './Album';
-import Photo from './Photo';
-import Todo from './Todo';
-import User from './User';
+import Post from './Post.jsx';
+import Ability from './Ability.jsx';
+import Comment from './Comment.jsx';
+import Album from './Album.jsx';
+import Photo from './Photo.jsx';
+import Todo from './Todo.jsx';
+import User from './User.jsx';
 
 function Signs(props) {
   // eslint-disable-next-line react/prop-types
