@@ -17,7 +17,7 @@ describe("Input test 1", () => {
     cy.on('window:alert', stub)
     cy.get('#inputArea').type("hello World!{enter}")
       .then(() => {
-        expect(stub.getCall(0)).to.be.calledWith('Ошибка ввода!')
+        expect(stub.getCall(0)).to.be.calledWith('Ошибка!')
       })
   })
 })
@@ -29,7 +29,7 @@ describe("Input test 2", () => {
     cy.on('window:alert', stub)
     cy.get('#inputArea').type("{enter}")
       .then(() => {
-        expect(stub.getCall(0)).to.be.calledWith('Вы не ввели число!')
+        expect(stub.getCall(0)).to.be.calledWith('Ошибка!')
       })
   })
 })
@@ -41,7 +41,7 @@ describe("Input test 3", () => {
     cy.on('window:alert', stub)
     cy.get('#inputArea').type("101{enter}")
       .then(() => {
-        expect(stub.getCall(0)).to.be.calledWith('Такого поста не существует!')
+        expect(stub.getCall(0)).to.be.calledWith('Ошибка!')
       })
   })
 })
