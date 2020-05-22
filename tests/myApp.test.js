@@ -5,7 +5,7 @@ describe('Fetch test', () => {
       .should((response) => {
         expect(response.status).to.eq(200);
         expect(response.body).to.have.property('title');
-        expect(response.body.title).contains('qui est esse');
+        expect(response.body.title).contains('est rerum tempore');
       });
   });
 });
