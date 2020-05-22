@@ -1,15 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './App.css';
-import Post from './Post.jsx';
-import Ability from './Ability.jsx';
-import Comment from './Comment.jsx';
-import Album from './Album.jsx';
-import Photo from './Photo.jsx';
-import Todo from './Todo.jsx';
-import User from './User.jsx';
+import Post from './Post';
+import Ability from './Ability';
+import Comment from './Comment';
+import Album from './Album';
+import Photo from './Photo';
+import Todo from './Todo';
+import User from './User';
 
 function Signs(props) {
-  // eslint-disable-next-line react/prop-types
   const { num } = props;
   return (
     <div>
@@ -26,6 +26,14 @@ function Signs(props) {
     </div>
   );
 }
+
+Signs.propTypes = {
+  num: PropTypes.number,
+};
+
+Signs.defaultProps = {
+  num: 0,
+};
 
 function App() {
   return (

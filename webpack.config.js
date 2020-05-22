@@ -25,4 +25,7 @@ module.exports = {
       template: './dist/index.html',
     }),
   ],
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
 };

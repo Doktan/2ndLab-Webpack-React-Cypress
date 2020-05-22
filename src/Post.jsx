@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Post extends React.PureComponent {
   constructor(props) {
@@ -71,4 +71,11 @@ class Post extends React.PureComponent {
   }
 }
 
+Post.propTypes = {
+  num: PropTypes.number,
+};
+
+Post.defaultProps = {
+  num: 0,
+};
 export default Post;
