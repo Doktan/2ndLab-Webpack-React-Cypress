@@ -1,11 +1,11 @@
 describe('Fetch test', () => {
   it("'Случайный Пост №1' fetches needed data", () => {
     cy.visit('/');
-    cy.request('https://jsonplaceholder.typicode.com/posts/2')
+    cy.request('https://jsonplaceholder.typicode.com/posts/1')
       .should((response) => {
         expect(response.status).to.eq(200);
         expect(response.body).to.have.property('title');
-        expect(response.body.title).contains('est rerum tempore');
+        expect(response.body.title).contains('sunt aut facere');
       });
   });
 });
