@@ -6,6 +6,8 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "express": "^4.17.1",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-promise-tracker": "^2.1.0",
@@ -15,7 +17,7 @@
     "start": "node ./server.js",
     "build": "./node_modules/.bin/webpack --mode=production",
     "test": "cypress run ./test/myApp.test.js",
-    "lint": "eslint ./src --fix"
+    "lint": "eslint ./src/*.{js,jsx}"
   },
   "browserslist": {
     "production": [

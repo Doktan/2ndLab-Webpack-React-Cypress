@@ -1,6 +1,6 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
+/* eslint-disable no-alert */
 import React from 'react';
-import Post from './Post.jsx';
+import Post from './Post';
 
 class Ability extends React.Component {
   constructor(props) {
@@ -49,15 +49,13 @@ class Ability extends React.Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <label>
-            Введите ID поста, который вы хотите увидеть!
-            {' '}
-            <br />
-            На сайте имеется всего-лишь 100 постов, ID [1;100]
-            {' '}
-            <br />
-            <input id="inputArea" type="text" value={id} onChange={this.handleChange} />
-          </label>
+          Введите ID поста, который вы хотите увидеть!
+          {' '}
+          <br />
+          На сайте имеется всего-лишь 100 постов, ID [1;100]
+          {' '}
+          <br />
+          <input id="inputArea" type="text" value={id} onChange={this.handleChange} />
           <input id="submitData" type="submit" value="Отправить" />
           <br />
           Результат:

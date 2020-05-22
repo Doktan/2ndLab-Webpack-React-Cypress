@@ -71,7 +71,6 @@ class User extends React.Component {
     const { catchPhrase } = company;
     const { bs } = company;
 
-
     return (
       <div>
         <b>

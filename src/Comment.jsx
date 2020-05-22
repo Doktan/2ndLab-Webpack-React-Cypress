@@ -16,7 +16,6 @@ class Comment extends React.Component {
       postId: null,
       id: null,
       name: null,
-      // eslint-disable-next-line react/no-unused-state
       email: null,
       body: null,
     };
